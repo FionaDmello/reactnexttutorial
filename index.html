@@ -1,18 +1,15 @@
 <html lang="en">
   <body>
     <div id="app"></div>
-    <script type="text/javascript">
-      // This is imperative programming - where you are explicitly specifying "how" to update the DOM from a given initial version of the HTML
-      // Declarative programming involves just specifying "what" you would like to see, and let the computer figure out "how" to update the DOM in order to show the changes
-      // React is a declarative library -  you tell it what you want to see happen to the UI. React figures out the steps and implements the "how" of DOM manipulation to make what you want to see happen.
+    <!-- Added react and react-dom and babel as dependencies to the current project -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
       const appEl = document.getElementById("app");
-      const header = document.createElement("h1");
+      const root = ReactDOM.createRoot(appEl);
 
-      const text = "Develop. Preview. Ship";
-      const headerContent = document.createTextNode(text);
-
-      header.appendChild(headerContent);
-      app.appendChild(header);
+      root.render(<h1>Develop. Preview. Ship</h1>);
     </script>
   </body>
 </html>
