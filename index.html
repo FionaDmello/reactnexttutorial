@@ -1,5 +1,18 @@
 <html lang="en">
   <body>
-    <div></div>
+    <div id="app"></div>
+    <script type="text/javascript">
+      // This is imperative programming - where you are explicitly specifying "how" to update the DOM from a given initial version of the HTML
+      // Declarative programming involves just specifying "what" you would like to see, and let the computer figure out "how" to update the DOM in order to show the changes
+      // React is a declarative library -  you tell it what you want to see happen to the UI. React figures out the steps and implements the "how" of DOM manipulation to make what you want to see happen.
+      const appEl = document.getElementById("app");
+      const header = document.createElement("h1");
+
+      const text = "Develop. Preview. Ship";
+      const headerContent = document.createTextNode(text);
+
+      header.appendChild(headerContent);
+      app.appendChild(header);
+    </script>
   </body>
 </html>
