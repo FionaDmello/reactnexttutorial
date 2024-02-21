@@ -9,7 +9,21 @@
       const appEl = document.getElementById("app");
       const root = ReactDOM.createRoot(appEl);
 
-      root.render(<h1>Develop. Preview. Ship</h1>);
+      // React component functions need to be PascalCased, this is the way Babel can distinguish between HTML tags and React components
+      function Header () {
+        return (<h1>Develop. Preview. Ship</h1>);
+      }
+
+      function HomePage () {
+        return (
+          <>
+            <Header />
+            <div>This is the Home Page component.</div>
+          </>
+        );
+      };
+
+      root.render(<HomePage />);
     </script>
   </body>
 </html>
