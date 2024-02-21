@@ -9,16 +9,19 @@
       const appEl = document.getElementById("app");
       const root = ReactDOM.createRoot(appEl);
 
-      
-      // Destructure props received from the parent during component declaration to use it directly
       function Header ({ title }) {
-        // Using {} in the middle of JSX code tells the compiler there is JS code in there that needs to be run
         return (<h1>Develop. { title ? title : "Preview" }. Ship</h1>);
       }
 
       function HomePage () {
-        // Components can help define the UI while iterating through list of data
         const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
+
+        const [likes, setLikes] = React.useState(0);
+
+        const handleClick = () => {
+          setLikes(likes + 1);
+        };
+
         return (
           <>
             <Header />
@@ -30,6 +33,7 @@
                   })
                 }
               </ul>
+              <button onClick={handleClick}>Like({ likes })</button>
             </div>
           </>
         );
